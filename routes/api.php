@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::get('/todo' , function () {
+  return 'Get /todo Route';
+});
+Route::post('/todo' , function () {
+  return 'Post /todo Route';
 });
