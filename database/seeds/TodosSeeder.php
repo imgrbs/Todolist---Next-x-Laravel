@@ -12,6 +12,18 @@ class TodosSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->insert([
+          'id' => 1,
+          'name' => 'Phachara',
+          'email' => 'pp@p.com',
+          'password' => bcrypt('1234')
+        ]);
+        DB::table('users')->insert([
+          'id' => 2,
+          'name' => 'Phongphan',
+          'email' => 'a@a.com',
+          'password' => bcrypt('1234')
+        ]);
         DB::table('todos')->insert([
             'user_id' => 1,
             'title' => 'example 1',
