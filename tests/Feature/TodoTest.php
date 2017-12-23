@@ -33,4 +33,9 @@ class TodoTest extends TestCase
       $response = $this->post('/api/todo',['title'=>'กินข้าว','description'=>'วันที่ 30 กุมภาพันธ์','user_id'=>1]);
       $this->assertEquals(200, $response->status());
     }
+    public function testInsertTitleAndDescAndUserIDAndStatusMustWork()
+    {
+      $response = $this->post('/api/todo',['title'=>'กินข้าว','description'=>'วันที่ 30 กุมภาพันธ์','user_id'=>1, "status" => 1]);
+      $this->assertEquals(200, $response->status());
+    }
 }
