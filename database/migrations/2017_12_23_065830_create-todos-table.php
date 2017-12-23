@@ -15,10 +15,12 @@ class CreateTodosTable extends Migration
     {
         Schema::create('todos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('title', 64);
             $table->string('description', 64);
             $table->tinyInteger('status');
-            $table->timestamps();
+            $table->timestampTz('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 
