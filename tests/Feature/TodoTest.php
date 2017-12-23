@@ -18,4 +18,9 @@ class TodoTest extends TestCase
       $response = $this->post('/api/todo',[]);
       $this->assertEquals(500, $response->status());
     }
+    public function testInsertOnlyTitleMustReturnError()
+    {
+      $response = $this->post('/api/todo',['title'=>'กินข้าว']);
+      $this->assertEquals(500, $response->status());
+    }
 }
