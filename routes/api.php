@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\TodoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,11 +12,9 @@ use App\Http\Controllers\TodoController;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-Route::get('/todo' , function () {
-  return 'Get /todo Route';
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
 });
+
+Route::get('/todo' , 'TodoController@get');
 Route::post('/todo' ,'TodoController@create');
