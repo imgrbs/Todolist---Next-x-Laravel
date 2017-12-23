@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\TodoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,6 +20,4 @@ use Illuminate\Http\Request;
 Route::get('/todo' , function () {
   return 'Get /todo Route';
 });
-Route::post('/todo' , function () {
-  return 'Post /todo Route';
-});
+Route::post('/todo' ,'TodoController@create');
