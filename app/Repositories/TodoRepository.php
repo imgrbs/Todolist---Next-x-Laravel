@@ -12,7 +12,7 @@ class TodoRepository
   public function create ($data) 
   {
     try {
-      $result = DB::table('todo')->insert(
+      $result = DB::table('todos')->insert(
         [
           'title' => array_get($data, 'title'),
           'description' => array_get($data, 'description'),

@@ -18,7 +18,7 @@ class CreateTodosTable extends Migration
             $table->integer('user_id');
             $table->string('title', 64);
             $table->string('description', 64);
-            $table->tinyInteger('status');
+            $table->tinyInteger('status')->default(0);
             $table->timestampTz('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->timestampTz('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
