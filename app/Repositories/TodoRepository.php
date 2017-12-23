@@ -16,7 +16,8 @@ class TodoRepository
         [
           'title' => array_get($data, 'title'),
           'description' => array_get($data, 'description'),
-          'user_id' => array_get($data, 'user_id')
+          'user_id' => array_get($data, 'user_id'),
+          'status' => array_get($data, 'status') ?: 0
         ]
       );
       return $result;
